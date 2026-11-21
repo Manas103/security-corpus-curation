@@ -1,0 +1,9 @@
+{
+  "fetched": 910,
+  "kept": 680,
+  "rejected_keyword_gate": 230,
+  "errors": 0,
+  "robots_blocked": 8,
+  "elapsed_s": 920.8589999999967,
+  "frontier_remaining": 4065
+}

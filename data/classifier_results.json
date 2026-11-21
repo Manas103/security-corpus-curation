@@ -1,0 +1,11 @@
+{
+  "teacher": "disjoint 24-term anchor-phrase heuristic (>=2 hits), substitute for frontier-model labeling",
+  "classifier": "TF-IDF (4000 features, 1-2 grams) + L2 logistic regression, class_weight=balanced",
+  "n_documents": 1404,
+  "n_teacher_positive": 811,
+  "n_train": 1053,
+  "n_test": 351,
+  "n_test_positive": 203,
+  "f1_keywords_alone": 0.7588785046728972,
+  "f1_classifier": 0.8781725888324873
+}

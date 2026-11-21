@@ -1,0 +1,35 @@
+$ python crawler/crawl.py --seconds 900 --out data/pages
+(attempt 1: original 14-seed, 6-worker configuration)
+{
+  "fetched": 910,
+  "kept": 680,
+  "rejected_keyword_gate": 230,
+  "errors": 0,
+  "robots_blocked": 8,
+  "elapsed_s": 920.8589999999967,
+  "frontier_remaining": 4065
+}
+
+$ python crawler/crawl.py --seconds 1500 --out data/pages_attempt2
+(attempt 2: expanded 27-seed, 16-worker configuration)
+{
+  "fetched": 1541,
+  "kept": 810,
+  "rejected_keyword_gate": 731,
+  "errors": 2,
+  "robots_blocked": 10,
+  "elapsed_s": 1515.4839999999967,
+  "frontier_remaining": 4765
+}
+
+Combined across both genuine attempts: 1,490 pages kept (passed the
+800-term keyword gate), 961 fetched-but-rejected, 2,451 total pages
+fetched, 2,436s (40.6 minutes) of wall-clock crawl time.
+
+Domain distribution of the 1,490 kept pages (measured after both
+attempts): 1,262 attack.mitre.org, 227 cwe.mitre.org, 1
+www.crowdstrike.com. See README "Findings" for why the other 12 seeded
+domains barely contributed.
+
+$ python crawler/fetch_negatives.py
+fetched 78 negative-topic pages

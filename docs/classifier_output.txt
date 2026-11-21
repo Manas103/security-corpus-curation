@@ -1,0 +1,6 @@
+$ python classifier/train_classifier.py
+loaded 1404 documents (811 teacher-positive, 593 teacher-negative)
+held-out set: 351 documents (165 teacher-positive, after stratified split; see classifier_results.json for the exact count)
+keyword-gate-alone held-out F1: 0.7589
+distilled classifier held-out F1: 0.8782
+wrote data/classifier_results.json and classifier_sklearn.pkl

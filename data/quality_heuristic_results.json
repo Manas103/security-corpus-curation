@@ -1,0 +1,13 @@
+{
+  "heuristic": "Gopher-style stop-word-density filter, threshold 0.08, applied per 60-word chunk (attempt 3 of 3 allowed)",
+  "attempts": {
+    "1_terminal_punct_by_line_whole_doc_pct": 0.0,
+    "2_stopword_density_whole_doc_pct": 0.1343183344526528,
+    "3_stopword_density_majority_chunks_pct": 0.8059100067159167
+  },
+  "n_attck_cwe_pages": 1489,
+  "n_deleted_final_attempt": 12,
+  "pct_deleted_final_attempt": 0.8059100067159167,
+  "decision": "kept",
+  "note": "measured on MITRE ATT&CK and CWE pages (this crawl did not seed from NVD/CVE detail pages, so no genuine CVE pages were available); claimed figure was 38%, all 3 genuine attempts measured far lower, reported honestly rather than tuned to match"
+}

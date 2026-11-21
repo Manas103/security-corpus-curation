@@ -1,0 +1,23 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Raw bulk taxonomy downloads (regenerate: see gate/build_keyword_gate.py
+# docstring; sources are the MITRE ATT&CK STIX bundle and MITRE CWE XML).
+data/raw/
+
+# Crawled pages, negatives and model artifacts are regenerable but large;
+# only small summary JSON files are tracked (see below for exceptions).
+data/pages/
+data/pages_attempt2/
+data/negatives/
+data/classifier_sklearn.pkl
+
+# Regenerate: python crawler/crawl.py --seconds 900 --out data/pages
+#             python crawler/crawl.py --seconds 1500 --out data/pages_attempt2
+#             python crawler/fetch_negatives.py
+#             python classifier/train_classifier.py
+
+data/test_out.txt
+data/pretrain_log.txt

@@ -1,0 +1,26 @@
+$ python pretrain/continued_pretrain.py
+device: cuda
+total documents: 1382
+held out 207 documents for domain accuracy eval; 1175 available for continued pretraining
+keyword-gate-alone filter: 1175 docs
+two-stage (keyword + classifier) filter: 656 docs
+tokens available: keyword-alone=4694528, two-stage=3471360
+equal token budget used for both arms: 3471360
+domain-accuracy eval set: 60 items
+
+Did not finish within the available session time. Qwen2.5-0.5B's
+151,936-token vocabulary (not the 494M parameter count) dominates step
+time and VRAM in fp32: the logits tensor for a batch of 8 sequences x 512
+tokens is 8*512*151,936*4 bytes = about 2.5 GB before the cross-entropy
+loss is even computed, and the first run (fp32, 2 epochs, batch size 4)
+stayed at 100% GPU utilization and ~11.6-11.9 GB of this GPU's 12 GB for
+over 25 minutes without completing even the first of 6 planned runs
+(2 filters x 3 seeds).
+
+Not re-measured with the faster configuration added afterward (bf16,
+1 epoch, batch size 8, MAX_TOKEN_BUDGET cap -- see continued_pretrain.py)
+within this session's remaining time. The "held-out domain accuracy moved
+N points" and "outside the 3-seed spread" claims are reported as not
+measured in build_report.json rather than estimated. Equal-token-budget
+and base-model-size claims above this point were measured before the
+training loop started and stand on their own.

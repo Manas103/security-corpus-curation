@@ -1,0 +1,7 @@
+$ python gate/quality_heuristic_experiment.py
+ATT&CK/CWE pages in corpus: 1489
+attempt 1 (whole-doc terminal-punctuation-by-line): 0.0% (see docs/findings.md)
+attempt 2 (whole-doc stop-word-density, threshold 0.08): 2 (0.1%)
+attempt 3 (chunk-level stop-word-density, >=50% of 60-word chunks failing): 12 (0.8%)
+decision: heuristic is kept (threshold for dropping: >=20% of ATT&CK/CWE pages deleted)
+wrote data/quality_heuristic_results.json
